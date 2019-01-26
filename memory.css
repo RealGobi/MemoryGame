@@ -1,0 +1,251 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+@font-face{
+  font-family: 'cow';
+  src: url(happycow.ttf)
+}
+@font-face{
+  font-family: 'hay';
+  src: url(hay.ttf)
+}
+.bg {
+  width: 100%;
+  top: 0px;
+  background-image: url("./img/bakground.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  }
+body  {
+  height: 100vh;
+  display: flex;
+  background: rgb(14, 150, 59);
+}
+.move .points{
+  font-family: 'cow';
+}
+.memory-game {
+  z-index: 1;
+  width: 485px;
+  height: 485px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+.center {
+  margin: 0 auto;
+}
+.hoverGameOff{
+  width: 485px;
+  height: 485px;
+  border-radius: 15px;
+  background-color:white;
+  box-shadow: 0px 0px 10px 3px yellow;
+  
+  position: absolute;
+}
+.gameOver{
+  width: 485px;
+  height: 485px;
+  border-radius: 15px;
+  background-color:white;
+  box-shadow: 0px 0px 10px 3px yellow;
+  
+  position: absolute;
+}
+
+.gameOn {
+  display:none;
+}
+.game {
+  display:none;
+}
+.memoryCard {
+  width: calc(25% - 10px);
+  height: calc(33.333% - 10px);
+  margin: 5px;
+  position: relative;
+  transform: scale(1);
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transition: transform .5s;
+ 
+}
+
+.memoryCard:active {
+    transform: scale(0.97);
+    transition: transform .2s;
+  }
+
+  .memoryCard.flip {
+    transform: rotateY(180deg);
+  }
+
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 15px;
+  background:#fff;
+  backface-visibility: hidden;
+  /* för att det ska fungera i safari behövs denna rad */
+  -webkit-backface-visibility: hidden;
+ 
+}
+.back-face{
+  border: 1px solid rgb(0, 0, 0);
+  
+}
+.front-face {
+  transform: rotateY(180deg);
+  border: 1px solid peachpuff;
+}
+.titel{
+  margin: 0 auto;
+  padding-top: 2%;
+  font-size: 3em;
+  font-family: 'cow';
+  text-align: center;
+  color: #000;
+}
+.supTxtL {
+  float: left;
+  padding-top: 0.5%;
+  padding-bottom: 0.5%;
+  font-size: 1.3em;
+  font-family: 'cow';
+  text-align: center;
+  color: #000;
+}
+.supTxtH {
+ float:right;
+padding-top: 0.5%;
+padding-bottom: 0.5%;
+font-size: 1.3em;
+font-family: 'cow';
+text-align: center;
+color: #000;
+}
+#timer {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+ #replay{
+   width: 100%;
+   height: 10%;
+   background-color: rgb(224, 97, 203);
+   border:  1px solid yellow;
+   color: #fff;
+   font-family: 'hay';
+   font-size: 2em;
+   border-radius: 15px;
+   margin-top: 20px;
+  }
+
+
+   .rules {
+  font-family: 'hay';
+  text-align: center;
+}
+.rules ul {
+  list-style: none;
+}
+.rules img {
+  margin: 0 auto;
+  width: 100%;
+  margin-top: 30px;
+}
+.win {
+  transform: rotateY(180deg);
+  box-shadow: 0px 0px 8px 2px yellow;
+  border: 1px solid yellow;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 15px;
+  background:#fff;
+}
+#progressBar {
+  width: 30%;
+  }
+.match {
+  transform: rotateY(0deg);
+  animation: fade 2s ease forwards;
+}
+
+@keyframes fade {
+  100%{opacity: 0;}
+  0%{opacity: 1;}
+}
+
+
+/* rules */
+
+
+.bodyRules{
+      background: url(./img/farmer.gif) no-repeat center center fixed; 
+      background-size: cover;
+  }
+
+.text {
+      background-image: linear-gradient(to bottom right,beige);
+      background-repeat: repeat-y;
+      height: auto;
+      width: 100%;
+      text-align: center;
+      font-family: 'hay';
+      font-size: 1em;    
+  }
+
+button{
+      border: 2px solid pink;
+      border-radius: 25px;
+      box-shadow: 0 0 10px darkmagenta;
+      color: rgba(139, 0, 139);
+      font-size: 15px;
+      margin-bottom:  15px;
+      margin-top: 15px;
+      font-family: 'hay';
+  }
+
+
+  /* For mobile phones: */
+
+   
+@media (max-width: 500px) {
+
+  body {
+    width: 100%;
+  }
+  .memory-game{
+    width: 300px;
+    height: 300px;
+  }
+  .gameOver{
+    width: 300px;
+    height: 300px;
+  }
+  .hoverGameOff{
+    width: 300px;
+    height: 300px;
+  }
+  .memoryCard{
+      width: calc(33.333% - 10px);
+      height: calc(25% - 10px);
+    }
+    .supTxtH, .supTxtL{
+      font-size: 0.8em;
+    }
+    #replay {
+      margin-top: 5px;
+    }
+    .rules img {
+      margin: 0 auto;
+      width: 100%;
+    }
+ 
+  }

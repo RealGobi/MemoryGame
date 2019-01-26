@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="en"> 
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="icon" type="image/png" href="./img/favicon-32x32.png" sizes="32x32" />
+        
+        <title>Memory Game</title>
+        <link rel="stylesheet" href="./memory.css">
+    </head>
+    <body class="bg">
+            <div class="center">
+              <div>
+                 <div>
+                        <h1 class="titel">MEMORY</h1>
+                        <span class="supTxtL">FÖRSÖK:  <span class="move"> 0</span> </span>
+                        <span id="timer"><progress value="0" max="30" id="progressBar"></progress></span> 
+                        <span class="supTxtH">POÄNG:<span class="points"> 0</span>  </span> 
+                 </div>
+                     
+  <section class="memory-game">
+     <script src="./cards.js"></script> 
+        <div class="hoverGameOff" >
+             <button id="replay" >Spela</button> 
+                 <a  href="rules.html" id="rules-btn"><button id="replay">Regler</button> </a>  
+                     <div class="rules">
+                        <img src="./img/chicken.gif" alt="farmer" srcset="">
+                    </div>
+        </div>
+
+         <div class="game">
+             <a href="index.html" id="rules-btn"><button id="replay">Till Start</button> </a>  
+                 <div class="rules">
+                    <h3>Spelet är slut!</h3><br>
+                        <ul>
+                            <li>Du fick: <span class="pointsEnd">0</span> poäng.</li>
+                            <li>Och använde: <span class="moveEnd">0</span> försök.</li>
+                            <li class="timeIsOut">Du klarade det på: <span class="seconds">0</span> sekunder.</li>
+                        </ul>
+                        <img src="./img/endGif.gif" alt="end_git">
+                </div>
+         </div>
+     
+  </section>
+        
+
+</div>
+</div>
+</body>
+ <script src="./memoryGame.js"></script>
+</html>
+
